@@ -40,7 +40,7 @@ def pin_decoder(sequences):
         prompt = sequence[4]
         stage = stages[i]
         instruction = stage[str(prompt)]
-        if len(instruction) > 1:
+        if isinstance(instruction, list):
             instruction = presses[instruction[0]][instruction[1]]
         press = presses[i]
         if instruction.split(" ")[0] == "l":
